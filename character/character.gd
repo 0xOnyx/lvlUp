@@ -32,9 +32,13 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity)
 
 func update_sprite():
-	var angle = rad2deg(velocity.AngleTo(Vector2.DOWN));  # For me Vector down as zero
-	angle = angle + 360.0 if angle < 0 else angle				# change -180 <-> +180 to 0 <-> 360
-	angle = Mathf.stepify()
+	# use this link !
+#	https://godotforums.org/d/26262-animated-sprite-8-directional/4
+	
+	
+#	var angle = rad2deg(velocity.angle_to(Vector2.DOWN));  # For me Vector down as zero
+#	angle = angle + 360.0 if angle < 0 else angle				# change -180 <-> +180 to 0 <-> 360
+#	angle = Mathf.stepify()
 	print(angle)
 	if (angle < 45): # walking left
 		anim.set_animation("left_walk")
@@ -55,9 +59,9 @@ func update_sprite():
 #inputVector.x = Input.GetActionStrength("Move_right") - Input.GetActionStrength("Move_left");
 #Then calculate angle (0-360) from it:
 
-yourAngle = yourAngle < 0 ? yourAngle + 360f : yourAngle;  // change -180 <-> +180 to 0 <-> 360
-yourAngle = Mathf.Stepify(yourAngle, 45);  // Step it for 8 directions (360/8 = 45)
-yourAngle = yourAngle == 360f ? 0f : yourAngle;  //360 and 0 are the same
-Then if you have animations organised in angles like me:
-
-CurrentAnimation = "Run_" + yourAngle;
+#yourAngle = yourAngle < 0 ? yourAngle + 360f : yourAngle;  // change -180 <-> +180 to 0 <-> 360
+#yourAngle = Mathf.Stepify(yourAngle, 45);  // Step it for 8 directions (360/8 = 45)
+#yourAngle = yourAngle == 360f ? 0f : yourAngle;  //360 and 0 are the same
+#Then if you have animations organised in angles like me:
+#
+#CurrentAnimation = "Run_" + yourAngle;
