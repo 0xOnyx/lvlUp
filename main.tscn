@@ -18,7 +18,7 @@ font_path = "res://assets/fonts/Modeseven-L3n5.ttf"
 size = 35
 font_data = SubResource( 3 )
 
-[sub_resource type="Shader" id=1]
+[sub_resource type="Shader" id=7]
 code = "
 shader_type canvas_item;
 
@@ -242,7 +242,7 @@ void fragment()
 }"
 
 [sub_resource type="ShaderMaterial" id=2]
-shader = SubResource( 1 )
+shader = SubResource( 7 )
 shader_param/overlay = true
 shader_param/scanlines_opacity = 0.041
 shader_param/scanlines_width = 0.11
@@ -286,12 +286,13 @@ margin_bottom = 720.0
 color = Color( 0.2, 0.0823529, 0.254902, 1 )
 
 [node name="ViewportContainer2" type="ViewportContainer" parent="."]
-margin_left = 720.0
-margin_right = 1280.0
-margin_bottom = 600.0
+margin_left = 775.0
+margin_top = 59.0
+margin_right = 1225.0
+margin_bottom = 509.0
 
 [node name="Viewport" type="Viewport" parent="ViewportContainer2"]
-size = Vector2( 560, 560 )
+size = Vector2( 450, 450 )
 transparent_bg = true
 handle_input_locally = false
 render_target_update_mode = 3
