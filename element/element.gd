@@ -1,31 +1,26 @@
 extends Node2D
 
-const SMOOTH_FACTOR = 0.1
+const SPEED = 100
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-var target
-export var inputmap = ["action_1"]
+var velocity = Vector2.ZERO
+var following = false
+var target: Node2D
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass
+func _physics_process(delta):
+	velocity = Vector2.ZERO
 
+	if following and target:
+		velocity = (target.position - position).normalized() * SPEED
+		position.move_toward(target.position, delta * SPEED)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _input(event):
+	if event.is_action_pressed("follow"):
+		if target and position.distance_to(target.position) < 64:
+			following = true
 
+func _on_Follower_body_entered(body):
+	target = body
 
-func _on_Area2D_body_entered(body):
-	print("action")
-	if Input.is_action_just_pressed(inputmap[0]):
-		print("OK")
-		target = get_parent().get_node("player")
-
-
-func _process(delta):
-	if target:
-		position = position.linear_interpolate(target.position, SMOOTH_FACTOR)
-		scale = lerp(scale, Vector2(1.5, 0.5), SMOOTH_FACTOR)
+func _on_Follower_body_exited(body):
+	if body == target:
+		target = null
