@@ -6,6 +6,11 @@ var velocity = Vector2.ZERO
 var target: KinematicBody2D = null
 var potential_target : KinematicBody2D = null
 
+export var element_sprite = "medkit"
+
+func _ready():
+	$Sprite.set_texture(g.element_sprites.get(element_sprite, "medkit"))
+
 func _physics_process(_delta):
 	velocity = Vector2.ZERO
 	
