@@ -59,7 +59,7 @@ func _add_a_scene_manually(var scene):
 
 func do_global_adjust(area, door):
 #	print("torugh door:", door, " we collected a :", area.get_element(), " at level :", self.name)
-	print("l", self.name.get_slice("_", 1), " d", door, " e", area.get_element())
+	print(self.name.get_slice("_", 1), " : ", door, " : ", area.get_element())
 	var lvl = g.responses.get(self.name)
 	if lvl == null:
 		return
@@ -70,10 +70,16 @@ func do_global_adjust(area, door):
 	var element = area.get_element()
 	if condition.has(g.GOOD) and condition.get(g.GOOD) == element:
 		print("[GOOD]")
+		print(level_door.get(g.MSG).get(g.GOOD))
+		g.end_messages.append(level_door.get(g.MSG_END).get(g.GOOD))
+		g.end_choises.append(g.GOOD)
 	elif condition.has(g.BAD) and condition.get(g.BAD) == element:
 		print("[BAD]")
+		print(level_door.get(g.MSG).get(g.BAD))
+		g.end_messages.append(level_door.get(g.MSG_END).get(g.BAD))
+		g.end_choises.append(g.BAD)
 	elif condition.has(g.UGLY) and condition.get(g.UGLY) == element:
 		print("[UGLY]")
-
-func check_condition():
-	pass
+		print(level_door.get(g.MSG).get(g.UGLY))
+		g.end_messages.append(level_door.get(g.MSG_END).get(g.UGLY))
+		g.end_choises.append(g.UGLY)

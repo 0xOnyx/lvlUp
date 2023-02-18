@@ -10,6 +10,9 @@ var element_sprites = {
 	"sword": preload("res://assets/items/sword.png")
 	}
 
+var end_messages : Array
+var end_choises : Array
+
 var responses = {
 	"Level_1" : {
 		PROMPT : "medoc or a knight, your choice",
@@ -107,5 +110,3 @@ var responses = {
 		},
 	},
 }
-
-var Level_result
