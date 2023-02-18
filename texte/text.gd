@@ -10,7 +10,8 @@ var scroll = 0
 func _ready():
 	print(text_to_write.length() * 0.01)
 	set_text(text_to_write)
-	$Tween.interpolate_property(self, "percent_visible", 0.0, 1.0, text_to_write.length() * 0.07, Tween.TRANS_LINEAR , 0)
+	$Tween.interpolate_property(self, "lines_skipped", 0, get_line_count() - 10, (get_line_count() - 10 ) * 0.7 , Tween.TRANS_LINEAR , 0)
+	$Tween.interpolate_property(self, "percent_visible", 0.0, 1.0, get_line_count() * 0.7, Tween.TRANS_LINEAR , 0)
 	$Tween.start()
 
 #func _ready():
@@ -27,3 +28,14 @@ func _ready():
 #		set_text(new_text)
 #		current_text_length += 1
 #		yield(get_tree().create_timer(writing_speed), "timeout")
+
+var lines_to_skip = 0
+
+func _on_Tween_tween_step(object, key, elapsed, value):
+	var line_count = get_line_count()
+	print(elapsed)
+	if line_count > 10:
+		lines_to_skip += 1
+	#	set_lines_skipped(lines_to_skip)
+	#	print("Skipped " + str(lines_to_skip) + " lines")
+		
