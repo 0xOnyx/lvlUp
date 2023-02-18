@@ -24,18 +24,18 @@ tile_data = PoolIntArray( 6, 0, 327689, 8, 0, 393216, 65536, 0, 327681, 65539, 0
 [node name="Door_1" parent="." index="5" instance=ExtResource( 1 )]
 position = Vector2( 72, 116 )
 
-[node name="PlayerKinematicBody2D" parent="." index="6" instance=ExtResource( 3 )]
+[node name="Door_2" parent="." index="6" instance=ExtResource( 1 )]
+position = Vector2( 72, 16 )
+
+[node name="Door_3" parent="." index="7" instance=ExtResource( 1 )]
+position = Vector2( 104, 32 )
+
+[node name="PlayerKinematicBody2D" parent="." index="8" instance=ExtResource( 3 )]
 position = Vector2( 55, 131 )
 
-[node name="PlayerKinematicBody2D2" parent="." index="7" instance=ExtResource( 3 )]
+[node name="PlayerKinematicBody2D2" parent="." index="9" instance=ExtResource( 3 )]
 position = Vector2( 103, 132 )
 playernum = 2
 
-[node name="Element" parent="." index="8" instance=ExtResource( 4 )]
-position = Vector2( 40, 55 )
-
-[node name="Element2" parent="." index="9" instance=ExtResource( 4 )]
-position = Vector2( 80, 55 )
-
-[node name="Element3" parent="." index="10" instance=ExtResource( 4 )]
-position = Vector2( 121, 55 )
+[node name="Element2" parent="." index="10" instance=ExtResource( 4 )]
+position = Vector2( 71, 55 )
