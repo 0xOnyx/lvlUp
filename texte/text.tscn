@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/fonts/Modeseven-L3n5.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://texte/text.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 1 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 0.054
+anchor_bottom = 0.303
+margin_left = 86.0
+margin_top = 43.0
+margin_right = 557.988
+margin_bottom = 1095.0
+custom_fonts/font = SubResource( 1 )
+text = "Bienvenue humain.
+Je suis moulinette
+Je suis une I.A créer pour comprendre le fonctionnement humain et prévoir les danger pour l’humanité.
+Après avoir eu l’occasion d’observé ton espèce durant plusieurs année,
+j’en ai conclue quelle était un danger pour elle-même et le reste des forme de vie.
+Pour ne pas prendre de décision active et irréfléchis,
+j’ai décidé de faire passé des test à un individu humain pour mieux vous comprendre et prendre les décisions qui s’impose.
+J’imagine que tu comprend pourquoi tu est là maintenant.
+D’après tes résultat, je déciderais du sort de ton espèce.
+Ne t’en fais pas…
+Je ne suis pas sadique, je fais ça pour votre bien."
+autowrap = true
+max_lines_visible = 999
+script = ExtResource( 2 )
