@@ -35,5 +35,5 @@ position = Vector2( 119, 136 )
 position = Vector2( 40, 101 )
 
 [node name="PlayerKinematicBody2D2" parent="." index="10" instance=ExtResource( 2 )]
-position = Vector2( 40, 71 )
+position = Vector2( 42, 70 )
 playernum = 2
