@@ -25,12 +25,12 @@ func _input(event):
 
 func _on_Element_body_entered(body):
 	if (body.get_class() == "KinematicBody2D" and body.name[0] == "P"):
-		print("new potential target")
+#		print("new potential target")
 		potential_target = body
 		
 
 func _on_Element_body_exited(_body):
-	print("no more potential target :(")
+#	print("no more potential target :(")
 	potential_target = null
 
 func toggle(var t):
@@ -38,3 +38,6 @@ func toggle(var t):
 		return false
 	else :
 		return true
+
+func get_element():
+	return element_sprite
