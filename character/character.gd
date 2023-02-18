@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 export var inputmap = ["action_1", "left_1", "right_1", "up_1", "down_1"]
 
-const SPEED = 100
+const SPEED = 50
 
 var velocity = Vector2.ZERO
 var animation_player
