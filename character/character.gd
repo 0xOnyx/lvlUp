@@ -1,17 +1,25 @@
 extends KinematicBody2D
 
-export var inputmap = ["action_1", "left_1", "right_1", "up_1", "down_1"]
+export var playernum = 1
+
+var inputmap
 
 const SPEED = 50
 
 var velocity = Vector2.ZERO
 var animation_player
 var direction = "down"
+var is_in_area
 
 func _ready():
+	inputmap = ["action_" + String(playernum),
+				"left_" + String(playernum),
+				"right_" + String(playernum),
+				"up_" + String(playernum),
+				"down_" + String(playernum)]
 	animation_player = $AnimationPlayer
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	velocity = Vector2.ZERO
 	if Input.is_action_pressed(inputmap[1]):
 		velocity.x -= SPEED
@@ -44,4 +52,4 @@ func _physics_process(delta):
 	else:
 		animation_player.play("Idle_" + direction)
 
-	move_and_slide(velocity)
+	velocity = move_and_slide(velocity)

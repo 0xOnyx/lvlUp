@@ -1,4 +1,4 @@
-extends Node2D
+extends Area2D
 
 const SPEED = 100
 
@@ -14,7 +14,7 @@ func _physics_process(delta):
 		position.move_toward(target.position, delta * SPEED)
 
 func _input(event):
-	if event.is_action_pressed("follow"):
+	if event.is_action_pressed("action_1"):
 		if target and position.distance_to(target.position) < 64:
 			following = true
 
