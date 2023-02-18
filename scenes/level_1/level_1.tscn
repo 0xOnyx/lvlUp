@@ -13,7 +13,6 @@ extents = Vector2( 5.5, 7.5 )
 tile_data = PoolIntArray( 131074, 0, 0, 131075, 0, 1, 131076, 0, 1, 131077, 0, 2, 131078, 0, 1, 131079, 0, 3, 196610, 0, 131072, 196611, 0, 458762, 196612, 0, 458762, 196613, 0, 458762, 196614, 0, 458762, 196615, 0, 65539, 262146, 0, 131072, 262147, 0, 458762, 262148, 0, 458762, 262149, 0, 458762, 262150, 0, 458762, 262151, 0, 65539, 327682, 0, 65536, 327683, 0, 458762, 327684, 0, 458762, 327685, 0, 458762, 327686, 0, 458762, 327687, 0, 65539, 393218, 0, 65536, 393219, 0, 458762, 393220, 0, 458762, 393221, 0, 458762, 393222, 0, 458762, 393223, 0, 65539, 458754, 0, 196608, 458755, 0, 9, 458756, 0, 9, 458757, 0, 9, 458758, 0, 9, 458759, 0, 196611 )
 
 [node name="WallTileMap" parent="." index="2"]
-show_collision = true
 tile_data = PoolIntArray( 196611, 0, 0, 196612, 0, 0, 196613, 1, 0, 196614, 0, 0 )
 
 [node name="FloorTileMap" parent="." index="3"]
@@ -22,9 +21,9 @@ tile_data = PoolIntArray( 262147, 0, 1, 262148, 0, 1, 262149, 0, 0, 262150, 0, 1
 [node name="DecorationTileMap" parent="." index="4"]
 tile_data = PoolIntArray( 196612, 0, 327680, 262147, 0, 262157, 262150, 0, 262157, 393222, 0, 262147 )
 
-[node name="door_1" type="Area2D" parent="." index="5"]
+[node name="Door1" type="Area2D" parent="." index="5"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="door_1" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door1" index="0"]
 position = Vector2( 72, 63 )
 shape = SubResource( 1 )
 
@@ -35,5 +34,5 @@ position = Vector2( 82, 86 )
 position = Vector2( 59, 99 )
 playernum = 2
 
-[node name="Area2D" parent="." index="8" instance=ExtResource( 3 )]
-position = Vector2( 103, 103 )
+[node name="Element" parent="." index="8" instance=ExtResource( 3 )]
+position = Vector2( 104, 104 )

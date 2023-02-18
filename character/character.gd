@@ -38,18 +38,28 @@ func _physics_process(_delta):
 			if velocity.x > 0 :
 				animation_player.set_flip_h(0)
 				direction = "left"
+				set_item_location(Vector2(7, 2))
 			else:
 				animation_player.set_flip_h(1)
 				direction = "left"
+				set_item_location(Vector2(-7, 2))
 		else :
 			if  velocity.y > 0:
 				animation_player.set_flip_h(0)
 				direction = "down"
+				set_item_location(Vector2(0, 7))
 			else:
 				animation_player.set_flip_h(0)
+				set_item_location(Vector2(0, -7))
 				direction = "up"
 		animation_player.play("Walk_" + direction)
 	else:
 		animation_player.play("Idle_" + direction)
 
 	velocity = move_and_slide(velocity)
+
+func get_item_location():
+	return position + $ItemLocation.position
+	
+func set_item_location(var p):
+	$ItemLocation.set_position(p)

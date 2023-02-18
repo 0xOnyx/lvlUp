@@ -8,7 +8,7 @@ var writing_speed: float = 0.1
 func _ready():
 	set_process(true)
 
-func _process(delta):
+func _process(_delta):
 	if current_text_length < text_to_write.length():
 		var new_text = text_to_write.substr(0, current_text_length + 1)
 		set_text(new_text)
