@@ -27,7 +27,7 @@ tile_data = PoolIntArray( 65544, 0, 327681, 196609, 0, 393216, 196613, 0, 65547,
 position = Vector2( 40, 117 )
 
 [node name="Door_2" parent="." index="6" instance=ExtResource( 2 )]
-position = Vector2( 104, 118 )
+position = Vector2( 104, 117 )
 
 [node name="P1" parent="." index="7" instance=ExtResource( 3 )]
 position = Vector2( 55, 52 )

@@ -30,10 +30,10 @@ position = Vector2( 86, 54 )
 position = Vector2( 89, 135 )
 
 [node name="Door_1" parent="." index="7" instance=ExtResource( 3 )]
-position = Vector2( 88, 23 )
+position = Vector2( 88, 22 )
 
 [node name="Door_2" parent="." index="8" instance=ExtResource( 3 )]
-position = Vector2( 120, 136 )
+position = Vector2( 136, 136 )
 
 [node name="PlayerKinematicBody2D" parent="." index="9" instance=ExtResource( 2 )]
 position = Vector2( 40, 101 )

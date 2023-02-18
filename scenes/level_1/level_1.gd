@@ -58,5 +58,19 @@ func _add_a_scene_manually(var scene):
 	call_deferred("queue_free")
 
 func do_global_adjust(area, door):
-	print("torugh door:", door, " we collected a :", area.get_element(), " at level :", self.name)
+#	print("torugh door:", door, " we collected a :", area.get_element(), " at level :", self.name)
+	print("l", self.name.get_slice("_", 1), " d", door, " e", area.get_element())
+	var tmp = g.responses.get(self.name)
+	if tmp == null:
+		return
+	var level_door = tmp.get("Door_" + String(door))
+	if level_door.get(g.CONDITION).get(g.GOOD):
+		print("[GOOD]")
+	elif level_door.get(g.CONDITION).get(g.BAD):
+		print("[BAD]")
+	elif level_door.get(g.CONDITION).get(g.UGLY):
+		print("[UGLY]")
+
+func check_condition():
+	pass
 	

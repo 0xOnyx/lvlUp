@@ -35,4 +35,4 @@ position = Vector2( 62, 69 )
 playernum = 2
 
 [node name="Door_1" parent="." index="9" instance=ExtResource( 4 )]
-position = Vector2( 72, 58 )
+position = Vector2( 72, 54 )

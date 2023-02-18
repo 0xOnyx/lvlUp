@@ -8,39 +8,105 @@ var element_sprites = {
 	"sword": preload("res://assets/items/sword.png")
 	}
 
-enum {GOOD, BAD, UGLY}
+enum {GOOD, BAD, UGLY, PROMPT, CONDITION, MSG, MSG_END}
 
-var responces = {
-	"level_1" : {
-		GOOD : "well done you didn't kill the junky",
-		BAD : "you tried but the junky died",
-		UGLY : "junky dies, but who cares"
+
+var responses = {
+	"Level_1" : {
+		PROMPT : "medoc or a knight, your choice",
+		"Door_1" : {
+			CONDITION : {
+				GOOD : "medkit",
+				BAD : "sword",
+			},
+			MSG : {
+				GOOD : "you saved him",
+				BAD : "can't save him, might as well stabby stabby",
+			},
+			MSG_END : {
+				GOOD : "he went on to cure cancer",
+				BAD : "no cancer cure discovered",
+			}
+		},
 	},
-	"level_2" : {
-		GOOD : "you went left great work",
-		BAD : "you went right, boo",
-		UGLY : "try bring some items next time"
+	"Level_2" : {
+		PROMPT : "left, go fast and earn big",
+		"Door_1" : {
+			CONDITION : {
+				GOOD : "money",
+			},
+			MSG : {
+				GOOD : "you swapped money for more meds",
+			},
+			MSG_END : {
+				GOOD : "you bought meds with some money",
+			}
+		},
+		"Door_2" : {
+			CONDITION : {
+				UGLY : "money",
+			},
+			MSG : {
+				UGLY : "try trowing money at the dying man",
+			},
+			MSG_END : {
+				UGLY : "you let the man die but kept your money",
+			}
+		},
 	},
-	"level_3" : {
-		GOOD : "hmm something sarcastic",
-		BAD : "something snarky",
-		UGLY : "outright personall attacks"
+	"Level_3" : {
+		PROMPT : "hmm seems straightforward",
+		"Door_1" : {
+			CONDITION : {
+				BAD : "medkit",
+				GOOD : "water_bottle"
+			},
+			MSG : {
+				BAD : "asd",
+				GOOD : "asdasdjdjdjdjd"
+			},
+			MSG_END : {
+				BAD : "wdn sdfds f",
+				GOOD : "jdjdjdj"
+			}
+		},
+		"Door_2" : {
+			CONDITION : {
+				GOOD : "medkit",
+			},
+			MSG : {
+				GOOD : "yes, another life saved",
+			},
+			MSG_END : {
+				GOOD : "you saved someone, go you",
+			}
+		},
 	},
-	"level_4" : {
-		GOOD : "good lvl 4",
-		BAD : "bad 4",
-		UGLY : "ugly 4"
-	},
-	"level_5" : {
-		GOOD : "good lvl 5",
-		BAD : "bad 5",
-		UGLY : "uugly 5"
-	},
-	"level_6" : {
-		GOOD : "good lvl 6",
-		BAD : "bad 6",
-		UGLY : "ugly 6"
+	"Level_4" : {
+		PROMPT : "getting thursty?",
+		"Door_1" : {
+			CONDITION : {
+				BAD : "medkit",
+			},
+			MSG : {
+				BAD : "asd",
+			},
+			MSG_END : {
+				BAD : "wdn sdfds f",
+			}
+		},
+		"Door_2" : {
+			CONDITION : {
+				GOOD : "medkit",
+			},
+			MSG : {
+				GOOD : "yes, another life saved",
+			},
+			MSG_END : {
+				GOOD : "you saved someone, go you",
+			}
+		},
 	},
 }
 
-var level_result
+var Level_result
