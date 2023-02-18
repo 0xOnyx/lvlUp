@@ -10,7 +10,6 @@ func _physics_process(_delta):
 	velocity = Vector2.ZERO
 	
 	if target:
-#		position = target.position
 		position = target.get_item_location()
 
 func _input(event):
