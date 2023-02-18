@@ -50,8 +50,8 @@ func _physics_process(_delta):
 				set_item_location(Vector2(0, 7))
 			else:
 				animation_player.set_flip_h(0)
-				set_item_location(Vector2(0, -7))
 				direction = "up"
+				set_item_location(Vector2(0, -7))
 		animation_player.play("Walk_" + direction)
 	else:
 		animation_player.play("Idle_" + direction)
