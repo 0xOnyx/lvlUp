@@ -6,7 +6,7 @@ const SPEED = 50
 
 var velocity = Vector2.ZERO
 var animation_player
-var direction = "Idle_down"
+var direction = "down"
 
 func _ready():
 	animation_player = $AnimationPlayer
