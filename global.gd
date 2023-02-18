@@ -1,5 +1,7 @@
 extends Node
 
+enum {GOOD, BAD, UGLY, PROMPT, CONDITION, MSG, MSG_END}
+
 var element_sprites = {
 	"blue_potion" : preload("res://assets/items/blue_potion.png"),
 	"duck" : preload("res://assets/items/duck.png"),
@@ -8,8 +10,8 @@ var element_sprites = {
 	"sword": preload("res://assets/items/sword.png")
 	}
 
-enum {GOOD, BAD, UGLY, PROMPT, CONDITION, MSG, MSG_END}
-
+var end_messages : Array
+var end_choises : Array
 
 var responses = {
 	"Level_1" : {
@@ -108,5 +110,3 @@ var responses = {
 		},
 	},
 }
-
-var Level_result

@@ -26,7 +26,7 @@ func _ready():
 	if is_instance_valid(door_3):
 		if self.get_node("Door_3").connect("area_entered", self, "_on_Door_3_area_entered"):
 			print("connection to door 3 failed")
-			
+
 func _process(_delta):
 	if free_me_door_1:
 		_add_a_scene_manually(door_1)
@@ -34,7 +34,7 @@ func _process(_delta):
 		_add_a_scene_manually(door_2)
 	elif free_me_door_3:
 		_add_a_scene_manually(door_3)
-		
+
 func _on_Door_1_area_entered(_area):
 #	get_tree().change_scene("res://scenes/level_2/level_2.tscn")
 #	print("we collected a :", _area.get_element(), " at level :", self.name)
@@ -59,18 +59,27 @@ func _add_a_scene_manually(var scene):
 
 func do_global_adjust(area, door):
 #	print("torugh door:", door, " we collected a :", area.get_element(), " at level :", self.name)
-	print("l", self.name.get_slice("_", 1), " d", door, " e", area.get_element())
-	var tmp = g.responses.get(self.name)
-	if tmp == null:
+	print(self.name.get_slice("_", 1), " : ", door, " : ", area.get_element())
+	var lvl = g.responses.get(self.name)
+	if lvl == null:
 		return
-	var level_door = tmp.get("Door_" + String(door))
-	if level_door.get(g.CONDITION).get(g.GOOD):
+	var level_door = lvl.get("Door_" + String(door))
+	if level_door == null:
+		return
+	var condition = level_door.get(g.CONDITION)
+	var element = area.get_element()
+	if condition.has(g.GOOD) and condition.get(g.GOOD) == element:
 		print("[GOOD]")
-	elif level_door.get(g.CONDITION).get(g.BAD):
+		print(level_door.get(g.MSG).get(g.GOOD))
+		g.end_messages.append(level_door.get(g.MSG_END).get(g.GOOD))
+		g.end_choises.append(g.GOOD)
+	elif condition.has(g.BAD) and condition.get(g.BAD) == element:
 		print("[BAD]")
-	elif level_door.get(g.CONDITION).get(g.UGLY):
+		print(level_door.get(g.MSG).get(g.BAD))
+		g.end_messages.append(level_door.get(g.MSG_END).get(g.BAD))
+		g.end_choises.append(g.BAD)
+	elif condition.has(g.UGLY) and condition.get(g.UGLY) == element:
 		print("[UGLY]")
-
-func check_condition():
-	pass
-	
+		print(level_door.get(g.MSG).get(g.UGLY))
+		g.end_messages.append(level_door.get(g.MSG_END).get(g.UGLY))
+		g.end_choises.append(g.UGLY)
