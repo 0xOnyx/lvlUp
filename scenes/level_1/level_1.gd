@@ -38,17 +38,17 @@ func _process(_delta):
 func _on_Door_1_area_entered(_area):
 #	get_tree().change_scene("res://scenes/level_2/level_2.tscn")
 #	print("we collected a :", _area.get_element(), " at level :", self.name)
-	do_global_adjust(_area)
+	do_global_adjust(_area, 1)
 	free_me_door_1 = true
 
 func _on_Door_2_area_entered(_area):
 #	get_tree().change_scene("res://scenes/level_2/level_2.tscn")
-	do_global_adjust(_area)
+	do_global_adjust(_area, 2)
 	free_me_door_2 = true
 
 func _on_Door_3_area_entered(_area):
 #	get_tree().change_scene("res://scenes/level_2/level_2.tscn")
-	do_global_adjust(_area)
+	do_global_adjust(_area, 3)
 	free_me_door_3 = true
 
 func _add_a_scene_manually(var scene):
@@ -57,6 +57,6 @@ func _add_a_scene_manually(var scene):
 	get_parent().add_child(scene.instance())
 	call_deferred("queue_free")
 
-func do_global_adjust(area):
-	print("we collected a :", area.get_element(), " at level :", self.name)
+func do_global_adjust(area, door):
+	print("torugh door:", door, " we collected a :", area.get_element(), " at level :", self.name)
 	
