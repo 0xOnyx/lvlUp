@@ -236,19 +236,19 @@ shader_param/resolution = Vector2( 640, 480 )
 shader_param/pixelate = false
 shader_param/roll = true
 shader_param/roll_speed = 1.9
-shader_param/roll_size = 19.545
+shader_param/roll_size = 19.578
 shader_param/roll_variation = 1.869
-shader_param/distort_intensity = 0.018
+shader_param/distort_intensity = 0.007
 shader_param/noise_opacity = 0.06
 shader_param/noise_speed = 1.896
 shader_param/static_noise_intensity = 0.103
-shader_param/aberration = -0.015
+shader_param/aberration = 0.01
 shader_param/brightness = 1.485
-shader_param/discolor = true
+shader_param/discolor = false
 shader_param/warp_amount = 0.318
 shader_param/clip_warp = true
 shader_param/vignette_intensity = 0.4
-shader_param/vignette_opacity = 0.173
+shader_param/vignette_opacity = 0.305
 
 [node name="Node2D" type="Node2D"]
 
@@ -266,17 +266,18 @@ render_target_update_mode = 3
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_left = 720.0
-margin_right = 1279.0
+margin_right = 1304.0
 margin_bottom = 720.0
 color = Color( 0.2, 0.0823529, 0.254902, 1 )
 
 [node name="ViewportContainer2" type="ViewportContainer" parent="."]
-margin_left = 720.0
-margin_right = 1280.0
-margin_bottom = 720.0
+margin_left = 716.0
+margin_top = 36.0
+margin_right = 1276.0
+margin_bottom = 636.0
 
 [node name="Viewport" type="Viewport" parent="ViewportContainer2"]
-size = Vector2( 560, 720 )
+size = Vector2( 560, 600 )
 transparent_bg = true
 handle_input_locally = false
 render_target_update_mode = 3
