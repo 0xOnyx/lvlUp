@@ -3,12 +3,12 @@
 [ext_resource path="res://texte/text_history_scroller.gd" type="Script" id=2]
 
 [node name="Control" type="Control"]
-anchor_right = 0.312
-anchor_bottom = 0.556
-margin_left = 20.0
-margin_top = 20.0
-margin_right = -19.36
-margin_bottom = -20.32
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 40.0
+margin_top = 40.0
+margin_right = -710.0
+margin_bottom = -150.0
 script = ExtResource( 2 )
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
@@ -18,7 +18,9 @@ follow_focus = true
 scroll_horizontal_enabled = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
-margin_right = 360.0
-margin_bottom = 360.0
+margin_right = 530.0
+margin_bottom = 530.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[connection signal="size_flags_changed" from="ScrollContainer" to="." method="_on_ScrollContainer_size_flags_changed"]
