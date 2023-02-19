@@ -13,6 +13,31 @@ var element_sprites = {
 var end_messages : Array
 var end_choises : Array
 
+# a string where the lates message is stored
+# once acessed it's forgotten. 
+var last_message : String
+var last_msg_acess : bool = false
+
+func pop_last_msg():
+	if last_msg_acess:
+		last_msg_acess = false
+		return last_message
+	else:
+		return null
+
+func add_last_msg(msg):
+#	print("adding : ", msg)
+	if last_msg_acess:
+		print("we didn't print [", last_message, "]")
+	last_message = msg
+	last_msg_acess = true
+
+func add_message(msg):
+	end_messages.append(msg)
+
+func add_choise(choise):
+	end_choises.append(choise) 
+
 var responses = {
 	"Level_1" : {
 		PROMPT : "Choisi l’objet qui te semble le plus utile entre ce couteau et ces médicaments.",
