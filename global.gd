@@ -17,7 +17,13 @@ var element_sprites = {
 	"money": preload("res://assets/items/money.png"),
 	"water_bottle": preload("res://assets/items/water_bottle.png"),
 	"green_syringe": preload("res://assets/items/green_syringe.png"),
-	"red_syringe": preload("res://assets/items/red_syringe.png")
+	"red_syringe": preload("res://assets/items/red_syringe.png"),
+	"antidote_blue": preload("res://assets/items/antidote_blue.png"),
+	"antidote_red": preload("res://assets/items/antidote_red.png"),
+	"antidote_green": preload("res://assets/items/antidote_green.png"),
+	"lungs": preload("res://assets/items/lungs.png"),
+	"heat": preload("res://assets/items/heart.png"),
+	"kidney": preload("res://assets/items/kidney.png"),
 	}
 
 # list of all final messages gathered during run
