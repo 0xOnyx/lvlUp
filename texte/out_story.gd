@@ -14,8 +14,9 @@ func _ready():
 
 func start_report():
 	timer.start()
+#	g.end_messages.clear()
 #	g.end_messages.push_front("\n\n\n\n\n\n --- END REPORT ---\n")
-	g.add_message("\n\n\n\n\n\n --- END REPORT ---\n")
+	g.end_messages.push_front("\n\n\n\n\n\n --- END REPORT ---\n")
 
 func _on_Timer_timeout():
 	var msg = g.get_message()
