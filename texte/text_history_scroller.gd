@@ -2,15 +2,7 @@ extends Control
 
 var text_typer = preload("res://texte/text_typer.tscn")
 
-#onready var scroll_container = get_node("$ScrollContainer")
-#onready var scrollbar = get_node("$ScrollContainer/VBoxContainer")
-var max_scroll = 1
-
-
-# Called when the node enters the scene tree for the first time.
-#func _ready():
-#	scrollbar.connect("changed", self, "scroll_to_bottom")
-#	max_scroll = scrollbar.max_value 
+onready var scroll_container = $ScrollContainer
 
 func _process(_delta):
 	var msg = g.ret_next_msg()
@@ -20,11 +12,13 @@ func _process(_delta):
 		add_text(msg)
 
 func add_text(var msg):
+	var scroll_bar = scroll_container.get_v_scrollbar()
+	var should_auto_scroll = ((scroll_bar.max_value - scroll_container.rect_size.y) - scroll_bar.value) <= 0
+
 	var new = text_typer.instance()
 	$ScrollContainer/VBoxContainer.add_child(new)
 	new.launch_typer(msg)
 
-#func scroll_to_bottom(): 
-#	if max_scroll != scrollbar.max_value:
-#		max_scroll = scrollbar.max_value
-#		scroll_container.scroll_vertical = scrollbar.max_value
+	yield(get_tree(), "idle_frame")
+	if should_auto_scroll:
+		scroll_bar.value = scroll_bar.max_value
