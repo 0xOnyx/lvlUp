@@ -13,9 +13,10 @@ func _ready():
 	title_tween.interpolate_property(title, "percent_visible", 0.0, 1.0, 10.0, Tween.TRANS_LINEAR, 0)
 	title_tween.start()
 
-func _process(delta):
+func _process(_delta):
 	if (Input.is_action_just_pressed("ui_select")):
-		get_tree().change_scene("res://main.tscn")
+		if get_tree().change_scene("res://main.tscn"):
+			print("change scene to main has failed")
 
 func _on_Timer_timeout():
 	if (select_start.is_visible()):

@@ -43,5 +43,5 @@ func print_str():
 #		yield(get_tree().create_timer(writing_speed), "timeout")
 
 
-func _on_Tween_tween_completed(object, key):
+func _on_Tween_tween_completed(_object, _key):
 	print_str()
