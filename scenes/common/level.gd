@@ -90,5 +90,3 @@ func do_global_adjust(area, door):
 		g.add_choise(g.UGLY)
 		g.add_msg_to_buffer(level_door.get(g.MSG).get(g.UGLY))
 
-#	print("prompt: ", lvl.get(g.PROMPT))
-	g.add_msg_to_buffer(lvl.get(g.PROMPT))
