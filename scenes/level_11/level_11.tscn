@@ -1,20 +1,35 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/common/Door.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/common/tileset/faireforest_tileset_base.tscn" type="PackedScene" id=2]
 [ext_resource path="res://character/character.tscn" type="PackedScene" id=3]
+[ext_resource path="res://element/element.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/final/final.tscn" type="PackedScene" id=5]
 
 [node name="Cosmic_tileset_base" instance=ExtResource( 2 )]
+door_1 = ExtResource( 5 )
+
+[node name="BorderTileMap" parent="." index="1"]
+tile_data = PoolIntArray( 65538, 0, 0, 65539, 0, 4, 65540, 0, 1, 65541, 0, 2, 65542, 0, 3, 131073, 0, 0, 131074, 0, 131077, 131075, 0, 589826, 131076, 0, 589826, 131077, 0, 589826, 131078, 0, 131080, 131079, 0, 3, 196609, 0, 65536, 196610, 0, 589826, 196611, 0, 589826, 196612, 0, 589826, 196613, 0, 589826, 196614, 0, 589826, 196615, 0, 196611, 262145, 0, 131072, 262146, 0, 589826, 262147, 0, 589826, 262148, 0, 589826, 262149, 0, 589826, 262150, 0, 589826, 262151, 0, 65539, 327681, 0, 196608, 327682, 0, 589826, 327683, 0, 589826, 327684, 0, 589826, 327685, 0, 589826, 327686, 0, 8, 327687, 0, 262147, 393217, 0, 131072, 393218, 0, 589826, 393219, 0, 589826, 393220, 0, 589826, 393221, 0, 8, 393222, 0, 262147, 458753, 0, 262144, 458754, 0, 262146, 458755, 0, 262145, 458756, 0, 5, 458757, 0, 262147 )
+
+[node name="WallTileMap" parent="." index="2"]
+tile_data = PoolIntArray( 131075, 0, 65536, 131076, 0, 5, 131077, 0, 131073, 196610, 0, 6, 196613, 0, 196614, 196614, 0, 131072, 262148, 0, 65540 )
+
+[node name="FloorTileMap" parent="." index="3"]
+tile_data = PoolIntArray( 196611, 2, 65536, 196612, 2, 0, 196613, 2, 131073, 262146, 2, 65536, 262147, 2, 196608, 262149, 10, 0, 262150, 4, 0, 327682, 3, 0, 327683, 9, 0, 327684, 7, 0, 327685, 10, 0, 393218, 2, 131072, 393219, 6, 0, 393220, 8, 0 )
+
+[node name="DecorationTileMap" parent="." index="4"]
+tile_data = PoolIntArray( 65537, 0, 196617, 131075, 0, 458761, 131077, 0, 65550, 262147, 0, 262161, 262150, 0, 262161, 262152, 0, 196617, 327682, 0, 327692, 327683, 0, 327693, 327685, 0, 262158, 327686, 0, 327685, 393219, 0, 327695, 393220, 0, 262159, 393221, 0, 327685, 393222, 0, 393217, 458754, 0, 327686, 458755, 0, 327686, 458756, 0, 327686, 458757, 0, 393217, 524289, 0, 196617, 524296, 0, 196617 )
 
 [node name="PlayerKinematicBody2D" parent="." index="5" instance=ExtResource( 3 )]
-position = Vector2( -11, 68 )
+position = Vector2( 39, 100 )
 
 [node name="PlayerKinematicBody2D2" parent="." index="6" instance=ExtResource( 3 )]
-position = Vector2( -13, 42 )
+position = Vector2( 40, 70 )
 playernum = 2
 
 [node name="Door_1" parent="." index="7" instance=ExtResource( 1 )]
-position = Vector2( -13, 16 )
+position = Vector2( 56, 33 )
 
-[node name="Door_2" parent="." index="8" instance=ExtResource( 1 )]
-position = Vector2( -14, -3 )
+[node name="Element" parent="." index="8" instance=ExtResource( 4 )]
+position = Vector2( 83, 89 )
