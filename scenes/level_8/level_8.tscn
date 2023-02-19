@@ -37,10 +37,10 @@ position = Vector2( 135, 75 )
 element_sprite = "heart"
 
 [node name="Door_1" parent="." index="8" instance=ExtResource( 4 )]
-position = Vector2( 151, 119 )
+position = Vector2( 40, 33 )
 
 [node name="Door_2" parent="." index="9" instance=ExtResource( 4 )]
 position = Vector2( 72, 94 )
 
 [node name="Door_3" parent="." index="10" instance=ExtResource( 4 )]
-position = Vector2( 40, 28 )
+position = Vector2( 151, 118 )
