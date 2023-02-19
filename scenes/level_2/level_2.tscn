@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://tileset/cosmic_tileset_base.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/common/tileset/cosmic_tileset_base.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/common/Door.tscn" type="PackedScene" id=2]
 [ext_resource path="res://character/character.tscn" type="PackedScene" id=3]
 [ext_resource path="res://element/element.tscn" type="PackedScene" id=4]
