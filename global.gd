@@ -72,7 +72,7 @@ var responses = {
 		},
 	},
 	"Level_2" : {
-		PROMPT : "Dans cette piece tu trouvera de l’argent, prend le et choisi une porte. En passant la porte de gauche tu perdra ton argent, mais tu prendra un raccourci qui te fera gagner du "temps". En passant par la porte de droite tu gardera ton argent mais tu fera un petit detour.",
+		PROMPT : "Dans cette piece tu trouvera de l’argent, prend le et choisi une porte. En passant la porte de gauche tu perdra ton argent, mais tu prendra un raccourci qui te fera gagner du 'temps'. En passant par la porte de droite tu gardera ton argent mais tu fera un petit detour.",
 		"Door_1" : {
 			CONDITION : {
 				BAD : "money",
