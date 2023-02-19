@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/level_1/level_1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://texte/text.tscn" type="PackedScene" id=2]
 [ext_resource path="res://audio/main_theme.ogg" type="AudioStream" id=3]
 [ext_resource path="res://assets/background/ui_front.png" type="Texture" id=4]
+[ext_resource path="res://rec.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFontData" id=5]
 font_path = "res://assets/fonts/NotoEmoji-Medium.ttf"
@@ -302,7 +303,7 @@ render_target_update_mode = 3
 [node name="UiFront" type="Sprite" parent="ViewportContainer2/Viewport/CRT"]
 position = Vector2( 887, 660 )
 
-[node name="Label2" type="Label" parent="."]
+[node name="rec" type="Label" parent="."]
 margin_left = 547.0
 margin_top = 48.0
 margin_right = 747.0
@@ -342,3 +343,10 @@ position = Vector2( -1, 0 )
 scale = Vector2( 2.5, 2.5 )
 texture = ExtResource( 4 )
 centered = false
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.648
+autostart = true
+script = ExtResource( 5 )
+
+[connection signal="timeout" from="Timer" to="Timer" method="_on_Timer_timeout"]
