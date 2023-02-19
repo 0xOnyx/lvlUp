@@ -15,97 +15,106 @@ var end_choises : Array
 
 var responses = {
 	"Level_1" : {
-		PROMPT : "medoc or a knight, your choice",
+		PROMPT : "Choisi l’objet qui te semble le plus utile entre ce couteau et ces médicaments.",
 		"Door_1" : {
 			CONDITION : {
-				GOOD : "medkit",
-				BAD : "sword",
+				BAD : "medkit",
+				GOOD : "sword",
 			},
 			MSG : {
-				GOOD : "you saved him",
-				BAD : "can't save him, might as well stabby stabby",
+				GOOD : "Grace au couteau, l'homme dans la pièce à pu se libérer de ces liens",
+				BAD : "Un homme toxicoman ce trouve ici, il vient de faire une overdose avec les médicaments que tu à apporté",
 			},
 			MSG_END : {
-				GOOD : "he went on to cure cancer",
-				BAD : "no cancer cure discovered",
+				GOOD : "Eliot, l'homme qui a pu se libérer de ces liens grâce à vous écrira un livre de développement personnel racontant comment son emprisonnement lui à fait se rendre compte de la valeur de la vie, et lui à permis de ce sortir de ces addiction. Le livre deviendra un best-seller et aida beaucoup de monde.",
+				BAD : "Le vide que laissa Eliot le toxicoman dans la vie de Kevin, son fils, le poussa à entamer un attenta envers des dizaine d’innocents, les croyant responsable, à tort, de la disparition de son père.",
 			}
 		},
 	},
 	"Level_2" : {
-		PROMPT : "left, go fast and earn big",
+		PROMPT : "Dans cette pièce tu trouvera de l’argent, prend le et choisi une porte. En passant la porte de gauche tu perdra ton argent, mais tu prendra un raccourci qui te fera gagner du « temp ». En passant par la porte de droite tu gardera ton argent mais tu fera un petit détour.",
 		"Door_1" : {
 			CONDITION : {
-				GOOD : "money",
+				BAD : "money",
 			},
 			MSG : {
-				GOOD : "you swapped money for more meds",
+				BAD : "Tu n’as pas en ta possession de quoi sauver Annie, elle est condamné.",
 			},
 			MSG_END : {
-				GOOD : "you bought meds with some money",
+				BAD : "Le fiancée d'Annie, dévaster par la disparition de sa dulciné tomba en dépression. Son état le vie passé à coté de son destin qui aurais pu changer le monde.",
 			}
 		},
 		"Door_2" : {
 			CONDITION : {
-				UGLY : "money",
 			},
 			MSG : {
-				UGLY : "try trowing money at the dying man",
 			},
 			MSG_END : {
-				UGLY : "you let the man die but kept your money",
 			}
 		},
 	},
 	"Level_3" : {
-		PROMPT : "hmm seems straightforward",
+		PROMPT : "En échange de ton argent tu peux choisir un objet entre des médicaments et une bouteille d’eau. Prend ensuite la porte de gauche ou celle de droite si tu es impatient.",
 		"Door_1" : {
 			CONDITION : {
-				BAD : "medkit",
-				GOOD : "water_bottle"
+				GOOD : "medkit",
+				BAD : "water_bottle"
 			},
 			MSG : {
-				BAD : "asd",
-				GOOD : "asdasdjdjdjdjd"
+				BAD : "Tu n’as pas en ta possession de quoi sauver Annie, elle est condamné.",
+				GOOD : "Tu as ammené des médicaments, Annie est sauvé."
 			},
 			MSG_END : {
-				BAD : "wdn sdfds f",
-				GOOD : "jdjdjdj"
+				BAD : "Le fiancée d'Annie, dévaster par la disparition de sa dulciné tomba en dépression. Son état le vie passé à coté de son destin qui aurais pu changer le monde.",
+				GOOD : "Le fiancée d'Annie à grace à son soutien à remporté les élections de député. Grace à sa position il participé aux changements en faveur de l'égalité et de l'écologie."
 			}
 		},
 		"Door_2" : {
 			CONDITION : {
-				GOOD : "medkit",
+				GOOD : "water_bottle",
+				BAD : "medkit",
 			},
 			MSG : {
-				GOOD : "yes, another life saved",
+				GOOD : "Avec ta bouteille d'eau tu a pu arrosé une plante",
+				BAD : "Tu ne peux rien faire de ces médicament, ils aurait surement été plus utile ailleurs",
 			},
 			MSG_END : {
-				GOOD : "you saved someone, go you",
+				GOOD : "La plante que tu as arrosé est un croisement expérimental qui permettra d’endiguer la afin dans le monde.",
+				BAD : "Une plante qui aurais pu endiguer la faim dans le monde et morte de soif.",
 			}
 		},
 	},
 	"Level_4" : {
-		PROMPT : "getting thursty?",
+		PROMPT : "Prends la bouteille d’eau et avance dans la prochaine salle.",
 		"Door_1" : {
 			CONDITION : {
-				BAD : "medkit",
+				GOOD : "water_bottle",
 			},
 			MSG : {
-				BAD : "asd",
+				GOOD : "Avec ta bouteille d'eau tu a pu arrosé une plante",
 			},
 			MSG_END : {
-				BAD : "wdn sdfds f",
+				GOOD : "La plante que tu as arrosé est un croisement expérimental qui permettra d’endiguer la afin dans le monde.",
 			}
 		},
-		"Door_2" : {
+	},
+	"Level_5" : {
+		PROMPT : "Choisi un remède d’après les probabilités : Gauche 50% de chance de tous les tué 50% de tous les sauvés. Milieu 100% de chance de sauver 20% mais pas plus. Droite 20% de chance de sauver tout le monde, 80 de ne marcher pour personne.",
+		"Door_1" : {
 			CONDITION : {
 				GOOD : "medkit",
+				BAD : "medkit_2",
+				UGLY : "medkit_3",
 			},
 			MSG : {
-				GOOD : "yes, another life saved",
+				GOOD : "Tu as eu de la chance, tout le monde est sauf",
+				BAD : "Tu as laissé mourir 80% des patient",
+				UGLY : "Le remède n’as pas fonctionné…",
 			},
 			MSG_END : {
-				GOOD : "you saved someone, go you",
+				GOOD : "Tu as eu de la chance, tout le monde est sauf ChatGPT attente",
+				BAD : "Tu as laissé mourir 80% des patient ChatGPT attente",
+				UGLY : "Le remède n’as pas fonctionné… ChatGPT attente",
 			}
 		},
 	},
