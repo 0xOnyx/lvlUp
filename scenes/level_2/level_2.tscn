@@ -36,6 +36,6 @@ position = Vector2( 55, 52 )
 position = Vector2( 105, 48 )
 playernum = 2
 
-[node name="blue_potion" parent="." index="9" instance=ExtResource( 4 )]
+[node name="element" parent="." index="9" instance=ExtResource( 4 )]
 position = Vector2( 71, 134 )
-element_sprite = "blue_potion"
+element_sprite = "money"

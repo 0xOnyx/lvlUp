@@ -11,7 +11,13 @@ var element_sprites = {
 	"duck" : preload("res://assets/items/duck.png"),
 	"fish" : preload("res://assets/items/fish.png"),
 	"medkit" : preload("res://assets/items/medkit.png"),
-	"sword": preload("res://assets/items/sword.png")
+	"medkit_2": preload("res://assets/items/medkit_2.png"),
+	"medkit_3": preload("res://assets/items/medkit_3.png"),
+	"sword": preload("res://assets/items/sword.png"),
+	"money": preload("res://assets/items/money.png"),
+	"water_bottle": preload("res://assets/items/water_bottle.png"),
+	"green_syringe": preload("res://assets/items/green_syringe.png"),
+	"red_syringe": preload("res://assets/items/red_syringe.png")
 	}
 
 # list of all final messages gathered during run
@@ -147,6 +153,37 @@ var responses = {
 				GOOD : "Tu as eu de la chance, tout le monde est sauf ChatGPT attente",
 				BAD : "Tu as laissé mourir 80% des patient ChatGPT attente",
 				UGLY : "Le remède n’as pas fonctionné… ChatGPT attente",
+			}
+		},
+	},
+	"Level_6" : {
+		PROMPT : "Dans cette pièce, tu trouves un antidote qui pourrait sauver la vie de plusieurs personnes malades, mais tu dois choisir la bonne seringue.",
+		"Door_1" : {
+			CONDITION : {
+				GOOD : "green_syringe",
+				BAD : "red_syringe",
+			},
+			MSG : {
+				GOOD : "Tu as choisi la bonne seringue, l'antidote a fonctionné et les patients ont commencé à guérir rapidement.",
+				BAD : "Tu as choisi la mauvaise seringue, l'antidote n'a pas fonctionné et les patients sont morts dans d'atroces souffrances.",
+			},
+			MSG_END : {
+				GOOD : "Grâce à toi, plusieurs personnes ont pu être sauvées et ont pu continuer à vivre leur vie normalement. Tu es devenu un héros dans la communauté et tu as été honoré pour ton acte de bravoure.",
+				BAD : "Les familles des patients décédés t'ont poursuivi en justice et tu as été condamné à une peine de prison pour homicide involontaire. Tu as perdu ta carrière, ta réputation et ta liberté.",
+			}
+		},
+		"Door_2" : {
+			CONDITION : {
+				GOOD : "red_syringe",
+				BAD : "green_syringe",
+			},
+			MSG : {
+				GOOD : "Tu as choisi la bonne seringue, l'antidote a fonctionné et les patients ont commencé à guérir rapidement.",
+				BAD : "Tu as choisi la mauvaise seringue, l'antidote n'a pas fonctionné et les patients sont morts dans d'atroces souffrances.",
+			},
+			MSG_END : {
+				GOOD : "Grâce à toi, plusieurs personnes ont pu être sauvées et ont pu continuer à vivre leur vie normalement. Tu es devenu un héros dans la communauté et tu as été honoré pour ton acte de bravoure.",
+				BAD : "Les familles des patients décédés t'ont poursuivi en justice et tu as été condamné à une peine de prison pour homicide involontaire. Tu as perdu ta carrière, ta réputation et ta liberté.",
 			}
 		},
 	},

@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://element/element.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/common/tileset/noirnights_tileset.tscn" type="PackedScene" id=2]
+[ext_resource path="res://character/character.tscn" type="PackedScene" id=3]
+
+[node name="level_30" instance=ExtResource( 2 )]
+
+[node name="BorderTileMap" parent="." index="1"]
+show_collision = true
+tile_data = PoolIntArray( 65538, 0, 4, 65539, 0, 5, 65540, 0, 327683, 65541, 0, 7, 131073, 0, 4, 131074, 0, 262144, 131075, 0, 393222, 131076, 0, 393222, 131077, 0, 65543, 196609, 0, 131076, 196610, 0, 393222, 196611, 0, 393222, 196612, 0, 393222, 196613, 0, 262145, 196614, 0, 5, 196615, 0, 7, 262145, 0, 65540, 262146, 0, 393222, 262147, 0, 393222, 262148, 0, 393222, 262149, 0, 393222, 262150, 0, 393222, 262151, 0, 131079, 327681, 0, 65540, 327682, 0, 393222, 327683, 0, 393222, 327684, 0, 393222, 327685, 0, 393222, 327686, 0, 393222, 327687, 0, 65543, 393217, 0, 65540, 393218, 0, 393222, 393219, 0, 393222, 393220, 0, 393222, 393221, 0, 262146, 393222, 0, 262147, 393223, 0, 196615, 458753, 0, 196612, 458754, 0, 196614, 458755, 0, 196613, 458756, 0, 196613, 458757, 0, 196615 )
+
+[node name="WallsTileMap" parent="." index="2"]
+show_collision = true
+tile_data = PoolIntArray( 131075, 1, 0, 131076, 1, 0, 196610, 0, 0, 262149, 1, 0, 262150, 1, 0 )
+
+[node name="FloorTileMap" parent="." index="3"]
+tile_data = PoolIntArray( 196611, 2, 0, 196612, 2, 0, 262146, 2, 0, 262147, 3, 0, 262148, 2, 0, 327682, 3, 0, 327683, 3, 0, 327684, 2, 0, 327685, 2, 0, 327686, 2, 0, 393218, 3, 0, 393219, 3, 0, 393220, 3, 0 )
+
+[node name="ShadowTileMap" parent="." index="4"]
+tile_data = PoolIntArray( 196611, 11, 0, 196612, 8, 0, 262146, 11, 0, 262147, 9, 0, 327682, 10, 0, 327685, 7, 0, 327686, 8, 0, 393218, 10, 0 )
+
+[node name="DecorationTileMap" parent="." index="5"]
+tile_data = PoolIntArray( 65543, 0, 262155, 131075, 0, 131089, 131076, 0, 131090, 262146, 0, 19, 262149, 0, 13, 327686, 0, 262148, 393221, 0, 14, 393222, 0, 15, 458756, 0, 15, 524289, 0, 262155, 524296, 0, 262155 )
+
+[node name="Element" parent="." index="6" instance=ExtResource( 1 )]
+position = Vector2( 69, 101 )
+
+[node name="Element2" parent="." index="7" instance=ExtResource( 1 )]
+position = Vector2( 71, 58 )
+
+[node name="PlayerKinematicBody2D" parent="." index="8" instance=ExtResource( 3 )]
+position = Vector2( 39, 97 )
+
+[node name="PlayerKinematicBody2D2" parent="." index="9" instance=ExtResource( 3 )]
+position = Vector2( 56, 58 )
