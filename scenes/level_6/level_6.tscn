@@ -43,4 +43,4 @@ playernum = 2
 
 [node name="Element2" parent="." index="10" instance=ExtResource( 4 )]
 position = Vector2( 120, 89 )
-element_sprite = "green_syringe"
+element_sprite = "duck"

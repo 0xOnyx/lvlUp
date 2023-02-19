@@ -37,6 +37,7 @@ position = Vector2( 136, 103 )
 
 [node name="Element2" parent="." index="7" instance=ExtResource( 2 )]
 position = Vector2( 87, 87 )
+element_sprite = "kidney"
 
 [node name="Door_3" parent="." index="8" instance=ExtResource( 4 )]
 position = Vector2( 72, 14 )

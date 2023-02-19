@@ -34,5 +34,14 @@ playernum = 2
 [node name="PlayerKinematicBody2D" parent="." index="8" instance=ExtResource( 2 )]
 position = Vector2( 54, 101 )
 
-[node name="Element" parent="." index="9" instance=ExtResource( 4 )]
+[node name="Element3" parent="." index="9" instance=ExtResource( 4 )]
+position = Vector2( 69, 70 )
+element_sprite = "antidote_green"
+
+[node name="Element2" parent="." index="10" instance=ExtResource( 4 )]
+position = Vector2( 104, 91 )
+element_sprite = "antidote_blue"
+
+[node name="Element" parent="." index="11" instance=ExtResource( 4 )]
 position = Vector2( 39, 71 )
+element_sprite = "antidote_red"

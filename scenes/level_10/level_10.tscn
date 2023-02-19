@@ -31,10 +31,19 @@ position = Vector2( 114, 88 )
 
 [node name="Element" parent="." index="7" instance=ExtResource( 1 )]
 position = Vector2( 69, 101 )
+element_sprite = "antidote_green"
 
-[node name="PlayerKinematicBody2D" parent="." index="8" instance=ExtResource( 3 )]
+[node name="Element2" parent="." index="8" instance=ExtResource( 1 )]
+position = Vector2( 73, 54 )
+element_sprite = "antidote_blue"
+
+[node name="Element3" parent="." index="9" instance=ExtResource( 1 )]
+position = Vector2( 55, 72 )
+element_sprite = "antidote_red"
+
+[node name="PlayerKinematicBody2D" parent="." index="10" instance=ExtResource( 3 )]
 position = Vector2( 39, 97 )
 
-[node name="PlayerKinematicBody2D2" parent="." index="9" instance=ExtResource( 3 )]
-position = Vector2( 56, 58 )
+[node name="PlayerKinematicBody2D2" parent="." index="11" instance=ExtResource( 3 )]
+position = Vector2( 58, 53 )
 playernum = 2

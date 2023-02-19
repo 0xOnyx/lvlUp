@@ -32,4 +32,13 @@ playernum = 2
 position = Vector2( 56, 33 )
 
 [node name="Element" parent="." index="8" instance=ExtResource( 4 )]
-position = Vector2( 83, 89 )
+position = Vector2( 87, 54 )
+element_sprite = "antidote_green"
+
+[node name="Element2" parent="." index="9" instance=ExtResource( 4 )]
+position = Vector2( 103, 71 )
+element_sprite = "antidote_blue"
+
+[node name="Element3" parent="." index="10" instance=ExtResource( 4 )]
+position = Vector2( 73, 101 )
+element_sprite = "antidote_red"
