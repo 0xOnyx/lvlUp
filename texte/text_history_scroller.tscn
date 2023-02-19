@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://texte/text_history_scroller.gd" type="Script" id=2]
+
+[node name="Control" type="Control"]
+anchor_right = 0.312
+anchor_bottom = 0.556
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -19.36
+margin_bottom = -20.32
+script = ExtResource( 2 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+follow_focus = true
+scroll_horizontal_enabled = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+margin_right = 360.0
+margin_bottom = 360.0
+size_flags_horizontal = 3
+size_flags_vertical = 3

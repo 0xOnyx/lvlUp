@@ -26,6 +26,8 @@ func _ready():
 	if is_instance_valid(door_3):
 		if self.get_node("Door_3").connect("area_entered", self, "_on_Door_3_area_entered"):
 			print("connection to door 3 failed")
+	var lvl = g.responses.get(self.name)
+	g.add_msg_to_buffer(lvl.get(g.PROMPT))
 
 func _process(_delta):
 	if free_me_door_1:
@@ -73,19 +75,20 @@ func do_global_adjust(area, door):
 		print("[GOOD] ", level_door.get(g.MSG).get(g.GOOD))
 		g.add_message(level_door.get(g.MSG_END).get(g.GOOD))
 		g.add_choise(g.GOOD)
-		g.add_last_msg(level_door.get(g.MSG).get(g.GOOD))
+		g.add_msg_to_buffer(level_door.get(g.MSG).get(g.GOOD))
 		
 	elif condition.has(g.BAD) and condition.get(g.BAD) == element:
 		print("[BAD] ", level_door.get(g.MSG).get(g.BAD))
 		g.add_message(level_door.get(g.MSG_END).get(g.BAD))
 		g.end_choises.append(g.BAD)
 		g.add_choise(g.BAD)
-		g.add_last_msg(level_door.get(g.MSG).get(g.BAD))
+		g.add_msg_to_buffer(level_door.get(g.MSG).get(g.BAD))
 		
 	elif condition.has(g.UGLY) and condition.get(g.UGLY) == element:
 		print("[UGLY] ", level_door.get(g.MSG).get(g.UGLY))
 		g.add_message(level_door.get(g.MSG_END).get(g.UGLY))
 		g.add_choise(g.UGLY)
-		g.add_last_msg(level_door.get(g.MSG).get(g.UGLY))
+		g.add_msg_to_buffer(level_door.get(g.MSG).get(g.UGLY))
 
-	print("prompt: ", lvl.get(g.PROMPT))
+#	print("prompt: ", lvl.get(g.PROMPT))
+	g.add_msg_to_buffer(lvl.get(g.PROMPT))

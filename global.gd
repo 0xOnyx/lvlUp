@@ -23,21 +23,17 @@ var end_choises : Array
 # a string where the lates message is stored
 # once acessed it's forgotten. 
 var last_message : String
-var last_msg_acess : bool = false
+var buffer_updated : bool = false
+var msg_buffer : Array
 
-func pop_last_msg():
-	if last_msg_acess:
-		last_msg_acess = false
-		return last_message
+func ret_next_msg():
+	if msg_buffer.size() > 0:
+		return msg_buffer.pop_front()
 	else:
 		return null
 
-func add_last_msg(msg):
-#	print("adding : ", msg)
-	if last_msg_acess:
-		print("we didn't print [", last_message, "]")
-	last_message = msg
-	last_msg_acess = true
+func add_msg_to_buffer(msg):
+	msg_buffer.append(msg)
 
 func add_message(msg):
 	end_messages.append(msg)
