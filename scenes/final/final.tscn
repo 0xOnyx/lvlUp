@@ -39,7 +39,7 @@ extents = Vector2( 16, 6.75 )
 radius = 14.0357
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 48, 4.5 )
+extents = Vector2( 47, 4.5 )
 
 [node name="noir_nights" instance=ExtResource( 1 )]
 
@@ -58,7 +58,7 @@ tile_data = PoolIntArray( 196610, 11, 0, 196611, 8, 0, 196612, 8, 0, 196613, 8, 
 [node name="DecorationTileMap" parent="." index="5"]
 tile_data = PoolIntArray( 327684, 0, 327691, 327685, 0, 327692, 524290, 0, 15, 524291, 0, 15, 524292, 0, 15, 524293, 0, 15, 524294, 0, 15, 524295, 0, 15 )
 
-[node name="PlayerKinematicBody2D" parent="." index="6" instance=ExtResource( 3 )]
+[node name="p1" parent="." index="6" instance=ExtResource( 3 )]
 position = Vector2( 80, 50 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="7"]
@@ -88,7 +88,7 @@ volume_db = -5.497
 [node name="final" type="Area2D" parent="." index="10"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="final" index="0"]
-position = Vector2( 80, 136 )
+position = Vector2( 80, 124 )
 shape = SubResource( 4 )
 disabled = true
 
@@ -96,5 +96,5 @@ disabled = true
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_Area2D_body_exited"]
-[connection signal="tree_entered" from="final/CollisionShape2D" to="Area2D" method="_on_CollisionShape2D_exit"]
+[connection signal="body_entered" from="final" to="Area2D" method="_on_final_body_entered"]
 [connection signal="report_finished" from="OutStory" to="Area2D" method="_on_OutStory_report_finished"]

@@ -2,6 +2,7 @@ extends Area2D
 
 export var inputmap = ["action_1"]
 
+
 var target: Node2D
 onready var final = get_parent().get_node("final").get_children()[0]
 
@@ -19,12 +20,18 @@ func _on_Area2D_body_exited(body):
 	
 func _ready():
 	get_parent().get_node("ring").play()
+	pass
 
 
-func _on_CollisionShape2D_exit():
-	pass # Replace with function body.
 
 
 func _on_OutStory_report_finished():
-	# allow the exit
-	pass # Replace with function body.
+	print("ok")
+	final.set_disabled(false)
+
+
+
+
+func _on_final_body_entered(body):
+	if body.name == "p1":
+		get_tree().change_scene("res://start/start.tscn")
