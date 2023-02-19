@@ -27,7 +27,8 @@ func _ready():
 		if self.get_node("Door_3").connect("area_entered", self, "_on_Door_3_area_entered"):
 			print("connection to door 3 failed")
 	var lvl = g.responses.get(self.name)
-	g.add_msg_to_buffer("$> " + lvl.get(g.PROMPT) + "\n")
+	if lvl:
+		g.add_msg_to_buffer("$> " + lvl.get(g.PROMPT) + "\n")
 
 func _process(_delta):
 	if free_me_door_1:

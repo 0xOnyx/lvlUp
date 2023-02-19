@@ -17,7 +17,7 @@ func add_text(var msg):
 
 	var new = text_typer.instance()
 	$ScrollContainer/VBoxContainer.add_child(new)
-	new.launch_typer(msg)
+	new.launch_typer(msg + "\n")
 
 	yield(get_tree(), "idle_frame")
 	if should_auto_scroll:
