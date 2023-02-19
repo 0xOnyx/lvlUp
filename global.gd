@@ -22,7 +22,7 @@ var element_sprites = {
 	"antidote_red": preload("res://assets/items/antidote_red.png"),
 	"antidote_green": preload("res://assets/items/antidote_green.png"),
 	"lungs": preload("res://assets/items/lungs.png"),
-	"heat": preload("res://assets/items/heart.png"),
+	"heart": preload("res://assets/items/heart.png"),
 	"kidney": preload("res://assets/items/kidney.png"),
 	}
 
