@@ -12,6 +12,15 @@ var direction = "down"
 var is_in_area
 
 func _ready():
+	if playernum == 1 and not g.p1:
+		self.queue_free()
+		return
+	if playernum == 2 and not g.p2:
+		self.queue_free()
+		return
+	if playernum == 3 and not g.p3:
+		self.queue_free()
+		return
 	inputmap = ["action_" + String(playernum),
 				"left_" + String(playernum),
 				"right_" + String(playernum),

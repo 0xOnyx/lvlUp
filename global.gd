@@ -2,6 +2,10 @@ extends Node
 
 enum {GOOD, BAD, UGLY, PROMPT, CONDITION, MSG, MSG_END}
 
+var p1 = true
+var p2 = false
+var p3 = false
+
 var element_sprites = {
 	"blue_potion" : preload("res://assets/items/blue_potion.png"),
 	"duck" : preload("res://assets/items/duck.png"),
