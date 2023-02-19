@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/common/tileset/noirnights_tileset.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/background/NoirNights_PetricakeGames.png" type="Texture" id=2]
 [ext_resource path="res://character/character.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/final/phone.gd" type="Script" id=4]
 [ext_resource path="res://audio/phone.ogg" type="AudioStream" id=5]
+[ext_resource path="res://texte/out_story.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 16, 6.75 )
@@ -91,6 +92,9 @@ position = Vector2( 80, 136 )
 shape = SubResource( 4 )
 disabled = true
 
+[node name="OutStory" parent="." index="11" instance=ExtResource( 6 )]
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_Area2D_body_exited"]
 [connection signal="tree_entered" from="final/CollisionShape2D" to="Area2D" method="_on_CollisionShape2D_exit"]
+[connection signal="report_finished" from="OutStory" to="Area2D" method="_on_OutStory_report_finished"]

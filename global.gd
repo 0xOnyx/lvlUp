@@ -43,6 +43,12 @@ func add_msg_to_buffer(msg):
 
 func add_message(msg):
 	end_messages.append(msg)
+	
+func get_message():
+	if end_messages.size() > 0:
+		return end_messages.pop_front()
+	else:
+		return null
 
 func add_choise(choise):
 	end_choises.append(choise) 
