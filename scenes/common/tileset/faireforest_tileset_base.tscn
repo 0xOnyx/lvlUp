@@ -686,7 +686,7 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 0/shapes = [  ]
 0/z_index = 0
 
-[node name="Cosmic_tileset_base" type="Node2D"]
+[node name="faireforest" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="FillerTileMap_dont_touch_it" type="TileMap" parent="."]

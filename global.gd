@@ -10,7 +10,10 @@ var element_sprites = {
 	"sword": preload("res://assets/items/sword.png")
 	}
 
+# list of all final messages gathered during run
 var end_messages : Array
+
+# list of choice resulrts, used to calc % good choices etc.
 var end_choises : Array
 
 # a string where the lates message is stored
