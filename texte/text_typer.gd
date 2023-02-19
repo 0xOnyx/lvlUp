@@ -8,13 +8,13 @@ var tween
 func _ready():
 	tween = Tween.new()
 	self.add_child(tween)
-	tween.interpolate_property(self, "percent_visible", 0.0, 1.0, 2, Tween.TRANS_CUBIC , Tween.EASE_OUT)
+	tween.interpolate_property(self, "percent_visible", 0.0, 1.0, 2, Tween.TRANS_CUBIC , 0)
 	tween.start()
 	pass
 
 func launch_typer(msg):
 	set_text(msg);
-	tween.interpolate_property(self, "percent_visible", 0.0, 1.0, 2, Tween.TRANS_CUBIC , Tween.EASE_OUT)
+	tween.interpolate_property(self, "percent_visible", 0.0, 1.0, 2, Tween.TRANS_CUBIC , 0)
 	tween.start()
 	
 #	go = 1
@@ -26,7 +26,7 @@ func _process(_delta):
 		#calculate playing time off length of text
 	if go:
 #		var tween = Tween.new()
-		tween.interpolate_property(self, "percent_visible", 0.0, 1.0, 2, Tween.TRANS_CUBIC , Tween.EASE_OUT)
+		tween.interpolate_property(self, "percent_visible", 0.0, 1.0, 2, Tween.TRANS_CUBIC , 0)
 		tween.start()
 		go = 0
 #		self.add_child(tween)
