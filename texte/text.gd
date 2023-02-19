@@ -30,6 +30,15 @@ func print_str():
 #func _ready():
 #	set_process(true)
 
+func _process(_delta):
+	var msg = g.pop_last_msg()
+	if msg == null:
+		return
+	print("should write: ", msg)
+	text_to_write = msg
+	scroll = 0
+	
+
 #func _process(_delta):
 #	if text_to_write.length() > current_text_length : 
 #		var new_text = text_to_write.substr(0, current_text_length + 1)
@@ -45,3 +54,4 @@ func print_str():
 
 func _on_Tween_tween_completed(_object, _key):
 	print_str()
+	

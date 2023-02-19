@@ -68,18 +68,24 @@ func do_global_adjust(area, door):
 		return
 	var condition = level_door.get(g.CONDITION)
 	var element = area.get_element()
+	
 	if condition.has(g.GOOD) and condition.get(g.GOOD) == element:
-		print("[GOOD]")
-		print(level_door.get(g.MSG).get(g.GOOD))
-		g.end_messages.append(level_door.get(g.MSG_END).get(g.GOOD))
-		g.end_choises.append(g.GOOD)
+		print("[GOOD] ", level_door.get(g.MSG).get(g.GOOD))
+		g.add_message(level_door.get(g.MSG_END).get(g.GOOD))
+		g.add_choise(g.GOOD)
+		g.add_last_msg(level_door.get(g.MSG).get(g.GOOD))
+		
 	elif condition.has(g.BAD) and condition.get(g.BAD) == element:
-		print("[BAD]")
-		print(level_door.get(g.MSG).get(g.BAD))
-		g.end_messages.append(level_door.get(g.MSG_END).get(g.BAD))
+		print("[BAD] ", level_door.get(g.MSG).get(g.BAD))
+		g.add_message(level_door.get(g.MSG_END).get(g.BAD))
 		g.end_choises.append(g.BAD)
+		g.add_choise(g.BAD)
+		g.add_last_msg(level_door.get(g.MSG).get(g.BAD))
+		
 	elif condition.has(g.UGLY) and condition.get(g.UGLY) == element:
-		print("[UGLY]")
-		print(level_door.get(g.MSG).get(g.UGLY))
-		g.end_messages.append(level_door.get(g.MSG_END).get(g.UGLY))
-		g.end_choises.append(g.UGLY)
+		print("[UGLY] ", level_door.get(g.MSG).get(g.UGLY))
+		g.add_message(level_door.get(g.MSG_END).get(g.UGLY))
+		g.add_choise(g.UGLY)
+		g.add_last_msg(level_door.get(g.MSG).get(g.UGLY))
+
+	print("prompt: ", lvl.get(g.PROMPT))
