@@ -1,15 +1,20 @@
 extends Area2D
 
+export var inputmap = ["action_1"]
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var target: Node2D
 
+func _input(event):
+	if event.is_action_pressed(inputmap[0]) and target:
+		get_parent().get_node("ring").stop()
+		#implemante final
 
-# Called when the node enters the scene tree for the first time.
+func _on_Area2D_body_entered(body):
+	target = body
+
+func _on_Area2D_body_exited(body):
+	if body == target:
+		target = null
+	
 func _ready():
 	get_parent().get_node("ring").play()
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
